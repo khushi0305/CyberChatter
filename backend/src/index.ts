@@ -1,9 +1,10 @@
+import { log } from "console";
 import express from "express";
 
 const app = express();
 
-app.get("/hello",(req, res, next) =>{
-return res.send("Hello");
-});
+//middlewares
+app.use(express.json());
 
+//connections and listeners
 app.listen(5000, ()=> console.log("Server Open"));
