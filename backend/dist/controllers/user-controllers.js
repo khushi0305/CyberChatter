@@ -3,7 +3,7 @@ import { hash } from "bcrypt";
 export const getAllUsers = async (req, res, next) => {
     try {
         const users = await User.find();
-        return res.status(200).json({ message: "OK", users });
+        return res.status(200).json({ message: "OK1q21", users });
     }
     catch (error) {
         console.log(error);
