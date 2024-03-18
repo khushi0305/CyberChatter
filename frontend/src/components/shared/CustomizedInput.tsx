@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material';
+import { TextField, colors } from '@mui/material';
 import React from 'react'
 type Props = {
     name: string;
@@ -6,7 +6,19 @@ type Props = {
     label: string;
 }
 const CustomizedInput = (props: Props) => {
-  return <TextField name={props.name} label={props.label} type={props.type}/>
+  return <TextField margin='normal'
+  InputLabelProps={{style:{color: "white"}}} 
+  name={props.name} 
+  label={props.label} 
+  type={props.type}
+  inputProps={{style: {
+    width: "400px", 
+    borderRadius: 10, 
+    fontSize: 20, 
+    color: "white"
+}
+}}
+  />
 }
 
 export default CustomizedInput
