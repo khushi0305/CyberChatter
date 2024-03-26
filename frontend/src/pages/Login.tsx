@@ -1,5 +1,6 @@
 import { Box,Typography, Button } from '@mui/material'
 import React from 'react'
+import { IoIosLogIn } from "react-icons/io"
 import CustomizedInput from '../components/shared/CustomizedInput'
 
 const Login = () => {
@@ -51,7 +52,9 @@ const Login = () => {
                     bgcolor: "white",
                     color: "black",
                   }
-                  }}>
+                  }}
+                  endIcon= {<IoIosLogIn/>}
+                  >
                     Login                    
                   </Button>
             </Box>
