@@ -33,7 +33,7 @@ export const userSignup = async(
         await user.save()
 
         res.clearCookie(COOKIE_NAME, {
-            httpOnly: true,
+            httpOnly: true, 
             domain: "localhost",
             signed: true,
             path: "/",

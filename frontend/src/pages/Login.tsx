@@ -12,7 +12,7 @@ const Login = () => {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
     try{
-      toast.loading("Signing In", {id: "login"})
+      toast.loading("Signing In", {id: "login"});
       await auth?.login(email, password);
       toast.success("Signing In Successfully", {id: "login"})
     }catch (error){
