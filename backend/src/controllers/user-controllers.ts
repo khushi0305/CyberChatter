@@ -39,7 +39,7 @@ export const userSignup = async(
             path: "/",
         })
         
-        return res.status(201).json({message: "OK", id: user._id.toString()});
+        return res.status(201).json({message: "OK", name: user.name, email: user.email});
     } catch(error) {
         console.log(error);
         return res.status(200).json({message: "ERROR", cause: error.message})
@@ -71,11 +71,17 @@ export const userLogin = async(
         const token= createToken(user._id.toString(), user.email, "7d")
         const expires = new Date()
         expires.setDate(expires.getDate()+7)
-        res.cookie(COOKIE_NAME, token, {path: "/", domain: "localhost", expires, httpOnly: true, signed: true})
+        res.cookie(COOKIE_NAME, token, {
+            path: "/", 
+            domain: "localhost", 
+            expires, 
+            httpOnly: true, 
+            signed: true,
+        })
 
 
 
-        return res.status(200).json({message: "OK", id: user._id.toString()});
+        return res.status(200).json({message: "OK", name: user.name, email: user.email});
     } catch(error) {
         console.log(error);
         return res.status(200).json({message: "ERROR", cause: error.message})
